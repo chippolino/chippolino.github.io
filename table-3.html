@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Главная страница</title>
+    <meta name="description" content="Описание главной страницы" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/ico" />
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  </head>
+  <body class="bg-light">
+    <!-- include common/svg-use-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">ДГТУ</a
+      ><button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Личный кабинет студента</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Личный кабинет преподователя</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Личный кабинет аналитика</a></li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Поиск" aria-label="Search" /><button
+            class="btn btn-outline-success my-2 my-sm-0"
+            type="submit"
+          >
+            Поиск
+          </button>
+        </form>
+      </div>
+    </nav>
+    <main class="container" role="main" id="third">
+      <div class="d-flex align-items-center p-3 my-3 text-white bg-primary rounded shadow-sm justify-content-center">
+        <h1 class="display-4">Средняя оценка курса студентами</h1>
+      </div>
+      <div class="row mb-4">
+        <div class="col-12"><div id="table"></div></div>
+      </div>
+    </main>
+    <script src="js/bundle.js"></script>
+  </body>
+</html>

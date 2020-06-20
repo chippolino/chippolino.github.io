@@ -3,69 +3,129 @@
   <head>
     <title>Главная страница</title>
     <meta name="description" content="Описание главной страницы" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/ico" />
     <link rel="stylesheet" href="css/all.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />
   </head>
-  <body>
+  <body class="bg-light">
     <!-- include common/svg-use-->
-    <div class="page-wrap">
-      <section class="mb-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <h1 class="text-center mt-5 mb-5">Оценка эффективности программ ДГТУ</h1>
-              <p id="all"></p>
-              <p class="effect" id="effect"></p>
-              <p class="noeffect" id="noeffect"></p>
-            </div>
-            <div class="col-4"><canvas id="myChart" width="400" height="400"></canvas></div>
-            <div class="offset-3 col-5">
-              <div class="input-group input-group-sm mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroup-sizing-sm">Коэффициент эффективности</span>
-                </div>
-                <input
-                  class="form-control"
-                  type="text"
-                  aria-label="Small"
-                  aria-describedby="inputGroup-sizing-sm"
-                  id="input"
-                />
-                <div class="input-group-append">
-                  <button class="btn btn-success" type="button" id="btn">Button</button>
-                </div>
-              </div>
-              <p class="kof">*Коэффициент эффективности должен быть не больше 2.7</p>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">ДГТУ</a
+      ><button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"><a class="nav-link" href="#">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Личный кабинет студента</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Личный кабинет преподователя</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Личный кабинет аналитика</a></li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Поиск" aria-label="Search" /><button
+            class="btn btn-outline-success my-2 my-sm-0"
+            type="submit"
+          >
+            Поиск
+          </button>
+        </form>
+      </div>
+    </nav>
+    <main class="container" role="main" id="main">
+      <div class="d-flex align-items-center p-3 my-3 text-white bg-primary rounded shadow-sm justify-content-center">
+        <h1 class="display-4">Оценка эффективности программ ДГТУ</h1>
+      </div>
+      <div class="row mb-4">
+        <div class="col-4">
+          <ul class="list-group mb-3 shadow">
+            <li class="list-group-item bg-light">
+              <span class="input-group-text mb-1 justify-content-center" id="inputGroup-sizing-sm"
+                >Коэффициент эффективности</span
+              ><input
+                class="form-control mb-1"
+                type="text"
+                aria-label="Small"
+                aria-describedby="inputGroup-sizing-sm"
+                id="input"
+              /><button class="btn btn-primary" type="button" id="btn">Посчитать</button>
+            </li>
+          </ul>
+          <ul class="list-group mb-3 shadow">
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success"><h6 class="my-0">Эффективно</h6></div>
+              <span class="text-success" id="effect"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div class="text-danger"><h6 class="my-0">Неэффективно</h6></div>
+              <span class="text-danger" id="noeffect"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Всего программ</span><strong id="all"></strong>
+            </li>
+          </ul>
+        </div>
+        <div class="col-8">
+          <div class="bg-white rounded shadow py-3"><canvas id="myChart" width="400" height="153"></canvas></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12"><div class="mb-4" id="select"></div></div>
+        <div class="col-4">
+          <div class="card mb-4 shadow">
+            <div class="card-body text-center">
+              <h1 class="card-title pricing-card-title text-success display-2 font-weight-bold" id="contest">7,5</h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Средний конкурс</li>
+                <li>на одно место</li>
+              </ul>
+              <a class="btn btn-lg btn-block btn-outline-primary" href="/table-1.html" type="button"
+                >Посмотреть таблицу</a
+              >
             </div>
           </div>
         </div>
-      </section>
-      <section>
-        <div class="container">
-          <div class="row">
-            <div class="col-12"><div class="mb-5" id="select"></div></div>
-            <div class="col-4">
-              <div class="number number--1">7,5</div>
-              <div class="text">Средний конкурс <br />на одно место</div>
-            </div>
-            <div class="col-4">
-              <div class="number number--2">3,4</div>
-              <div class="text">Средний уровень <br />капитализации выпускников</div>
-            </div>
-            <div class="col-4">
-              <div class="number number--1">8,6</div>
-              <div class="text">Средняя оценка <br />курса студентами</div>
+        <div class="col-4">
+          <div class="card mb-4 shadow">
+            <div class="card-body text-center">
+              <h1 class="card-title pricing-card-title text-warning display-2 font-weight-bold" id="capital">3,4</h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Средний уровень</li>
+                <li>капитализации выпускников</li>
+              </ul>
+              <a class="btn btn-lg btn-block btn-outline-primary" href="/table-2.html" type="button"
+                >Посмотреть таблицу</a
+              >
             </div>
           </div>
         </div>
-      </section>
-      <!-- include footer-->
-    </div>
+        <div class="col-4">
+          <div class="card mb-4 shadow">
+            <div class="card-body text-center">
+              <h1 class="card-title pricing-card-title text-success display-2 font-weight-bold" id="rating">8,6</h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Средняя оценка</li>
+                <li>курса студентами</li>
+              </ul>
+              <a class="btn btn-lg btn-block btn-outline-primary" href="/table-3.html" type="button"
+                >Посмотреть таблицу</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     <script src="js/bundle.js"></script>
   </body>
 </html>
