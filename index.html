@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Главная страница</title>
+    <meta name="description" content="Описание главной страницы" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/ico" />
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />
+  </head>
+  <body>
+    <!-- include common/svg-use-->
+    <div class="page-wrap">
+      <section class="mb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="text-center mt-5 mb-5">Оценка эффективности программ ДГТУ</h1>
+              <p id="all"></p>
+              <p class="effect" id="effect"></p>
+              <p class="noeffect" id="noeffect"></p>
+            </div>
+            <div class="col-4"><canvas id="myChart" width="400" height="400"></canvas></div>
+            <div class="offset-3 col-5">
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">Коэффициент эффективности</span>
+                </div>
+                <input
+                  class="form-control"
+                  type="text"
+                  aria-label="Small"
+                  aria-describedby="inputGroup-sizing-sm"
+                  id="input"
+                />
+                <div class="input-group-append">
+                  <button class="btn btn-success" type="button" id="btn">Button</button>
+                </div>
+              </div>
+              <p class="kof">*Коэффициент эффективности должен быть не больше 2.7</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-12"><div class="mb-5" id="select"></div></div>
+            <div class="col-4">
+              <div class="number number--1">7,5</div>
+              <div class="text">Средний конкурс <br />на одно место</div>
+            </div>
+            <div class="col-4">
+              <div class="number number--2">3,4</div>
+              <div class="text">Средний уровень <br />капитализации выпускников</div>
+            </div>
+            <div class="col-4">
+              <div class="number number--1">8,6</div>
+              <div class="text">Средняя оценка <br />курса студентами</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- include footer-->
+    </div>
+    <script src="js/bundle.js"></script>
+  </body>
+</html>
